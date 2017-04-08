@@ -1,0 +1,32 @@
+{
+  "name": "blog-db",
+  "version": "1.0.0",
+  "description": "blog ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zylstraj/blog-db.git"
+  },
+  "keywords": [
+    "blog",
+    "mongo"
+  ],
+  "author": "jz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zylstraj/blog-db/issues"
+  },
+  "homepage": "https://github.com/zylstraj/blog-db#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.3",
+    "nodemon": "^1.11.0",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "webpack": "^2.3.3"
+  }
+}
