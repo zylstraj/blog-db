@@ -1,5 +1,5 @@
+const Authentication = require('./routes/user_routes');
+
 module.exports = function(app) {
-  app.get('/', function(req, res, next) {
-    res.send(['waterbottle', 'frustration', 'anger?'])
-  })
+  app.post('/signup', Authentication.signup);
 }
