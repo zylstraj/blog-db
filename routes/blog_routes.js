@@ -1,13 +1,12 @@
 const Blogs = require('../models/blogs');
 
 exports.getBlogs = function(req, res, next) {
-  console.log(req);
   const title = req.body.title;
   const tagline = req.body.tagline;
   const content = req.body.content;
 
-  Blogs.find({}, (err, req) => {
-    res.json(req.body)
+  Blogs.find({}, (err, blog) => {
+    res.json(blog)
   })
 }
 exports.newBlog = function(req, res, next) {
@@ -20,4 +19,10 @@ exports.newBlog = function(req, res, next) {
   newBlog.save((err, req) => {
     res.json(req.body)
   })
+}
+exports.getOneBlog = function(req, res, next) {
+    Blogs.findById(req.params.id, (err, blog) => {
+      console.log(blog)
+      res.json(blog)
+    })
 }
