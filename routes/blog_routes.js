@@ -17,12 +17,28 @@ exports.newBlog = function(req, res, next) {
 
   const newBlog = new Blogs(req.body);
   newBlog.save((err, req) => {
+    if (err) return res.send(err);
     res.json(req.body)
   })
 }
 exports.getOneBlog = function(req, res, next) {
     Blogs.findById(req.params.id, (err, blog) => {
+      if (err) return res.send(err);
       console.log(blog)
       res.json(blog)
     })
+}
+exports.deleteBlog = function(req, res, next) {
+  Blogs.findById(req.params.id, (err, blog) => {
+    blog.remove((err, blog) => {
+      if (err) return res.send(err);
+      res.json({message: 'Blog removed'})
+    })
+  })
+}
+exports.editBlog = function(req, res, next) {
+  Blogs.findByIdAndUpdate(req.params.id, req.body, (err, blog) => {
+    if (err) return res.send(err);
+    res.json(blog);
+  })
 }

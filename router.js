@@ -6,4 +6,6 @@ module.exports = function(app) {
   app.get('/blogs', Blogs.getBlogs);
   app.post('/blogs', Blogs.newBlog);
   app.get('/blogs/:id', Blogs.getOneBlog);
+  app.delete('/blogs/:id', Blogs.deleteBlog);
+  app.put('/blogs/:id', Blogs.editBlog);
 }
