@@ -6,6 +6,7 @@ exports.getBlogs = function(req, res, next) {
   const content = req.body.content;
 
   Blogs.find({}, (err, blog) => {
+    if (err) return res.status(500).send(err);
     res.json(blog)
   })
 }
@@ -17,7 +18,7 @@ exports.newBlog = function(req, res, next) {
 
   const newBlog = new Blogs(req.body);
   newBlog.save((err, req) => {
-    if (err) return res.send(err);
+    if (err) return res.status(500).send(err);
     res.json(req.body)
   })
 }
