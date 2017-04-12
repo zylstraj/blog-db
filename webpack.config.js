@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname + '/index.js',
+  entry: path.resolve(__dirname, 'src') + '/index.js',
   output: {
     path: path.resolve(__dirname),
     filename: 'bundle.js',
@@ -29,5 +29,9 @@ module.exports = {
     }
 
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
   }
 }
