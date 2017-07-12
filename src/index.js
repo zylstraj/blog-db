@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactRouter from 'react-router-dom';
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
+// var Router = ReactRouter.BrowserRouter;
+// var Route = ReactRouter.Route;
 
 import App from './components/app';
 class SetUp extends React.Component {
   render() {
-    <Router>
+    // <Router>
     <div>
-      <Route path="/blogs" component={App} />
+      // <Route path="/blogs" component={App} />
+      <App />
     </div>
-    </Router>
+    // </Router>
   }
 }
 
