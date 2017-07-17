@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 router(app);
 
-app.get('/', function(req, res) {
+app.get('/blogs', function(req, res) {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
 // mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/db');

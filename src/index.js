@@ -7,11 +7,13 @@ import App from './components/app';
 
 class SetUp extends React.Component {
   render() {
+    return(
     <div>
       <Switch>
         <Route path="/" component={App} />
       </Switch>
     </div>
+  )
   }
 }
 
