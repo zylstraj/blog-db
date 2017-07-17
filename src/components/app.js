@@ -1,43 +1,46 @@
 import React from 'react';
+import axios from 'axios';
+
+class BlogList extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  componentDidMount(){
+  }
+  render() {
+  return (
+    <div>
+    <h1>See if this works</h1>
+
+    </div>
+  )
+}
+}
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       blogs: []
     };
   }
-  componentWillMount() {
-    fetch('/blogs')
-    .then(res => res.json())
-    .then(data => {
-      this.setState({ blogs: data})
+  componentDidMount() {
+    axios.get('/api/blogs')
+    .then(function(res){
+      console.log(res)
     })
+    .catch(function (error) {
+      console.log(error);
+ });
   }
   render() {
     return(
       <div>
         <h1>Change The Narrative</h1>
-        <blogList blogs={this.state.blogs}/>
+        <BlogList blogs={this.state.blogs}/>
       </div>
     )
   }
 }
-function Blog(props) {
-  console.log(props);
-  return (
-    <div>
-    <h1>{props.title}</h1>
-    <p>{props.tagline}</p>
-    <p>{props.content}</p>
-    </div>
-  )
-}
-function blogList(props) {
-  return (
-    <div>
-    {props.blogs.map(Blog)}
-    </div>
-  )
-}
+
 export default App;
