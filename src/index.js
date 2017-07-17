@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactRouter from 'react-router-dom';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
-// var Router = ReactRouter.BrowserRouter;
-// var Route = ReactRouter.Route;
 
 import App from './components/app';
 
