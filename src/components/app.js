@@ -24,6 +24,7 @@ class App extends React.Component {
   }
 }
 function Blog(props) {
+  console.log(props);
   return (
     <div>
     <h1>{props.title}</h1>
