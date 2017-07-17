@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor() {
@@ -8,10 +9,10 @@ class App extends React.Component {
     };
   }
   componentWillMount() {
-    fetch('/blogs')
-    .then(res => res.json())
-    .then(data => {
-      this.setState({ blogs: data})
+    axios.get('/blogs')
+    .then(function(response){
+      console.log(response)
+      this.setState({blogs: response})
     })
   }
   render() {

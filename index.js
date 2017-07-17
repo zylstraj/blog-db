@@ -1,13 +1,11 @@
+'use strict'
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const router = require('./router');
 const mongoose = require('mongoose');
-
-app.use(bodyParser.urlencoded({ extended: true}));
-app.use(bodyParser.json());
-router(app);
-
+const path = require('path');
 
 mongoose.Promise = global.Promise;
 try {
@@ -18,6 +16,14 @@ try {
   process.exit(1);
 }
 
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
+router(app);
+
+app.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
 // mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/db');
 
 const PORT = process.env.PORT || 5000;
