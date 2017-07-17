@@ -5,7 +5,7 @@ import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
 import App from './components/app';
 
-class SetUp extends React.Component {
+class Setup extends React.Component {
   render() {
     return(
     <div>
@@ -19,6 +19,6 @@ class SetUp extends React.Component {
 
 ReactDOM.render(
   <BrowserRouter>
-    <SetUp />
+    <Setup />
   </BrowserRouter>
   , document.getElementById('container'));

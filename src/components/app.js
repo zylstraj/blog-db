@@ -25,9 +25,9 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get('/blogs')
-    .then(function(response){
-      console.log(response)
+    axios.get('/api/blogs')
+    .then(function(res){
+      console.log(res)
     })
     .catch(function (error) {
       console.log(error);
